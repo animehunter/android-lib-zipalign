@@ -1,4 +1,4 @@
-project(zipalign-standalone)
+project(zipalign)
 cmake_minimum_required(VERSION 2.8)
 
 find_package( ZLIB REQUIRED)
@@ -52,3 +52,6 @@ add_library(${PROJECT_NAME} STATIC ${SRC_LIST}
                ${SRC_NATIVE_UTILS}
                ${SRC_CORE_CUTILS}
               )
+
+install(TARGETS ${PROJECT_NAME} DESTINATION lib)
+install(FILES include/zipalign.h DESTINATION include)
